@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>To do list</title>
+    <head>
+    <body>
+        <center>
+            <h3>TO DO LIST</h3>
+            <table>
+                <td><tr><input type="text" id="input" placeholder="Enter task"><button type="button" onclick="show()" id="btn">ADD TASK</button></tr></td>
+            </table>
+            <textarea id="textarea" rows="9" column="40"></textarea>
+            <br>
+            <br>
+            <input type="text" id="output" placeholder="Enter task"><button type="button" onclick="show1()" id="btn">SHOW NEXT TASK</button>
+            <script>
+                var task=document.getElementById("input");
+                var taskarea=document.getElementById("textarea");
+             var i;
+
+                var arr=[];
+                function show()
+                {
+                   
+                    arr.push(task.value);
+                    task.value="";
+                    taskarea.value="";
+                
+                for(i=0;i<arr.length;i++)
+                {
+                    taskarea.value=taskarea.value+arr[i]+"\n";
+                    
+                  
+                }
+
+                 
+                
+
+                }
+         
+
+                function show1()
+                {
+                    if(arr.length==0)
+                    {
+                        output.value="";
+                    alert("PLEASE ENTER SOME TASK");
+                    }
+                    else
+                    {
+                    output.value=arr.pop();
+                    taskarea.value="";
+                    for(i=0;i<arr.length;i++)
+                    {
+                        taskarea.value=taskarea.value+arr[i]+"\n";
+                        
+                      
+                    }
+                }
+                }
+
+            </script>
+        </body>
+        </html>
